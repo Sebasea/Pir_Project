@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*
+{
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family: 'Ubuntu', sans-serif;
+}
+:root
+{
+    --orange:#002661;
+    --white:#fff;
+    --black:#222229;
+    --grey:#f3f3f3;
+}
+body
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--white);
+}
+.container
+{
+    position: relative;
+    width: 100%;
+}
+.navigation
+{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--orange);
+    border-left: 10px solid var(--orange);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active
+{
+   width: 80px; 
+}
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background: var(--white);
+}
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+   color:var(--orange) 
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon
+{
+    font-size: 1.75em;
+}
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 50px;
+    text-align: start;
+    white-space: nowrap;
+}
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.main
+{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+.main.active
+{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.topbar
+{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle
+{
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+.about
+{
+    position: relative;
+    width: 100%;
+    padding: 20px; 
+}
+.about .title
+{
+    height: 80px;
+    color: var(--black);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.about .title:hover
+{
+    color: var(--orange);
+}
+.about .text-box
+{
+    font-size: 20px;
+    height: 50px;
+    
+}
+.cardBox
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+.cardBox .card
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.3);
+}
+.cardBox .card .info
+{
+    font-weight: 400;
+    font-size: 2em;
+    color: var(--orange);
+}
+.cardBox .card .cardName
+{
+    font-size: 1.1em;
+    color: var(--black);
+    margin-top: 5px;
+}
+.cardBox .card .iconBx
+{
+    font-size: 3em;
+    color: var(--black);
+}
+.cardBox .card:hover
+{
+    background: var(--orange);
+}
+.cardBox .card:hover .info,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx
+{
+    color: var(--white);
+}
+.educationBox,
+.title-education
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+.title-education
+{
+    height: 80px;
+    color: var(--black);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.title-education:hover
+{
+    color: var(--orange);
+}
+.educationBox .education
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.3);
+}
+.educationBox .education .date
+{
+    font-weight: 400;
+    font-size: 2em;
+    color: var(--orange);
+}
+.educationBox .education .info
+{
+    font-size: 1.1em;
+    color: var(--black);
+    margin-top: 5px;
+}
+.educationBox .education .iconBx
+{
+    font-size: 3em;
+    color: var(--black);
+}
+.educationBox .education:hover
+{
+    background: var(--orange);
+}
+.educationBox .education:hover .date,
+.educationBox .education:hover .info,
+.educationBox .education:hover .iconBx
+{
+    color: var(--white);
+}
+.workBox,
+.title-work
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+}
+.title-work
+{
+    height: 80px;
+    width: max-content;
+    color: var(--black);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.title-work:hover
+{
+    color: var(--orange);
+}
+.workBox .work
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.3);
+}
+.workBox .work .date
+{
+    font-weight: 400;
+    font-size: 2em;
+    color: var(--orange);
+}
+.workBox .work .info
+{
+    font-size: 1.1em;
+    color: var(--black);
+    margin-top: 5px;
+}
+.workBox .work .iconBx
+{
+    font-size: 3em;
+    color: var(--black);
+}
+.workBox .work:hover
+{
+    background: var(--orange);
+}
+.workBox .work:hover .date,
+.workBox .work:hover .info,
+.workBox .work:hover .iconBx
+{
+    color: var(--white);
+}
+.skillsBox,
+.title-skills-2,
+.title-skills
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+.title-skills
+{
+    height: 80px;
+    color: var(--black);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.title-skills-2
+{
+    height: 80px;
+    color: var(--black);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.title-skills-2:hover,
+.title-skills:hover
+{
+    color: var(--orange);
+}
+.skillsBox .skills
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.3);
+}
+.skillsBox .skills .info
+{
+    font-size: 1.1em;
+    color: var(--black);
+    margin-top: 5px;
+}
+.skillsBox .skills:hover
+{
+    background: var(--orange);
+}
+.skillsBox .skills:hover .info
+{
+    color: var(--white);
+}
+.interBox,
+.title-interest
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-gap: 30px;
+}
+.title-interest
+{
+    height: 80px;
+    color: var(--black);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.title-interest:hover
+{
+    color: var(--orange);
+}
+.interBox .inter
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.3);
+}
+.interBox .inter .date
+{
+    font-weight: 400;
+    font-size: 2em;
+    color: var(--orange);
+}
+.interBox .inter .info
+{
+    font-size: 1.1em;
+    color: var(--black);
+    margin-top: 5px;
+}
+.interBox .inter .iconBx
+{
+    font-size: 3em;
+    color: var(--black);
+}
+.interBox .inter:hover
+{
+    background: var(--orange);
+}
+.interBox .inter:hover .date,
+.interBox .inter:hover .info,
+.interBox .inter:hover .iconBx
+{
+    color: var(--white);
+}
+.contBox,
+.title-contact
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+}
+.title-contact
+{
+    height: 80px;
+    color: var(--black);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.title-contact:hover
+{
+    color: var(--orange);
+}
+.contBox .cont
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.3);
+}
+.contBox .cont .date
+{
+    font-weight: 400;
+    font-size: 2em;
+    color: var(--orange);
+}
+.contBox .cont .info
+{
+    font-size: 1.1em;
+    color: var(--black);
+    margin-top: 5px;
+}
+.contBox .cont .iconBx
+{
+    font-size: 3em;
+    color: var(--black);
+}
+.contBox .cont:hover
+{
+    background: var(--orange);
+}
+.contBox .cont:hover .date,
+.contBox .cont:hover .info,
+.contBox .cont:hover .iconBx
+{
+    color: var(--white);
+}
+.loader {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgb(220, 220, 220) 40%,
+    rgb(170, 170, 170) 98%,
+    rgb(10, 10, 10) 100%
+  );
+  border-radius: 50%;
+  position: relative;
+}
+
+.loader:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border-bottom: 0 solid #ffffff05;
+  box-shadow: 0 -10px 20px 20px #ffffff40 inset,
+    0 -5px 15px 10px #ffffff50 inset, 0 -2px 5px #ffffff80 inset,
+    0 -3px 2px #ffffffbb inset, 0 2px 0px #ffffff, 0 2px 3px #ffffff,
+    0 5px 5px #ffffff90, 0 10px 15px #ffffff60, 0 10px 20px 20px #ffffff40;
+  filter: blur(3px);
+  animation: 2s rotate linear infinite;
+}
+
+@keyframes rotate {
+  100% { transform: rotate(360deg) }
+}
+    

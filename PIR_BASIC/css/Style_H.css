@@ -1,0 +1,28 @@
+.Schedule table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .Schedule th,
+  .Schedule td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .Schedule thead th {
+    background-color: #ddd;
+  }
+  
+  .Schedule tbody tr:nth-child(odd) td {
+    background-color: #f2f2f2;
+  }
+  
+  .Schedule tbody td:first-child {
+    font-weight: bold;
+  }
+  
+  .Schedule tbody td:not(:first-child) {
+    height: 30px;
+  }
+  

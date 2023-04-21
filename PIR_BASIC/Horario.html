@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+   <link rel="stylesheet" href="CSS/Style_Schedule.css"> 
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="Home.html">
+                        <span class="icon"><ion-icon name="bandage-outline"></ion-icon></span>
+                        <span class="title"><strong> PIR </strong></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Usuario.html">
+                        <span class="icon"><ion-icon name="finger-print-outline"></ion-icon></span>
+                        <span class="title">Usuario</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Horario.html">
+                        <span class="icon"><ion-icon name="calendar-number-outline"></ion-icon></span>
+                        <span class="title">Horarios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Informes.html">
+                        <span class="icon"><ion-icon name="file-tray-full-outline"></ion-icon></span>
+                        <span class="title">Informes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Paciente.html">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">Pacientes</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="Schedule">
+                <table >
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>09:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>09:30</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!-- Continúa hasta las horas que desees -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function() {
+            navigation.classList.toggle('active')
+            main.classList.toggle('active')
+        }
+
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink(){
+            list.forEach((item) => 
+                item.classList.remove('hovered'));
+                this.classList.add('hovered');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover',activeLink))
+    </script>
+</body>
+</html>
